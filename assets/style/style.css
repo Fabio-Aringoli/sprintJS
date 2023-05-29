@@ -1,0 +1,320 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+                                                    /* HEADER */
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+header, 
+footer, 
+.navbar{
+    background-color: rgb(129, 2, 129) !important; 
+}
+
+#navbarSupportedContent{
+    z-index: 1;
+    background-color: rgb(129, 2, 129);
+}
+
+nav img{
+    width: 6rem;
+}
+                                                    /* MAINS */
+#mainIndex{
+    height: 565vh;
+}
+
+#mainComingEvents,#mainPastEvents{
+    height: 330vh;
+} 
+
+#mainContact{
+    height: 110vh;
+}
+
+#mainStats{
+    height: 77vh;
+}
+
+
+#mainDetails{
+    height: 130vh;
+}
+
+h1{
+    text-align: center;
+}
+
+                                                    /* CARTAS */
+
+.sectionCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-img-top{
+    height: 13rem;
+}
+
+.buttonCard{
+    display: flex;
+    justify-content: space-between;
+}
+
+                                                              /* FORMULARIO */
+                                                    
+.containerForm{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 2px outset rgb(136, 47, 84);
+    background-color: rgba(177, 38, 91, 0.863);
+}
+
+label,input,textarea{
+    padding: .3rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.buttonForm{
+    display: flex;
+}
+
+.buttonForm button{
+    padding: .3rem;
+    width: 6rem;
+    border-radius: 4rem;
+    border: none;
+}
+                                                                /* STATS */
+.containerTable{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}
+table{
+    padding: .4rem;
+    border: none;
+}
+
+tr,th,td{
+    padding: 1rem;
+    border: 1px solid #000;
+}
+th{
+    color: #fff;
+    text-shadow: 1px 1px 1px  #000;
+    background-color: rgb(125, 125, 125);
+}
+
+                                                                /* DETAILS */
+
+.detailsSection{
+    height: 130vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center
+}
+
+.containerImg{
+    height: 50vh;
+    width: 60vw;
+    border: 1px solid #000;
+    background-color: #fff;
+    box-shadow: -20px -10px 15px -3px rgba(0, 0, 0, 0.575);
+}
+
+.detailsImg{
+    object-fit: cover;
+}
+
+.containerTxt{
+    height: 70vh;
+    width: 60vw;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+.containerTxt h1{
+    text-align: center;
+}
+
+.card{
+    margin-top: 1rem;
+}
+
+.sectionCard{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+}
+                                                                /* FOOTER */
+footer{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p{
+    color: #fff;
+}
+
+.categoryControl{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.categoryControl input{
+    height: 1rem;
+}
+
+.categoryControl .d-flex{
+    height: 1rem;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+}
+
+.categoryControl .d-flex input{
+    width: 8rem;
+    height: 2rem;
+}
+.categoryControl .d-flex button{
+    height: 2rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width:325px) and (max-width:574px){
+                                                        /* MAINS */
+#mainIndex{
+    height: 565vh;
+}
+
+#mainComingEvents,#mainPastEvents{
+    height: 330vh;
+} 
+
+#mainContact{
+    height: 110vh;
+}
+
+#mainStats{
+    height: 77vh;
+}
+
+
+#mainDetails{
+    height: 130vh;
+}
+
+}
+
+@media only screen and (min-width:576px) and (max-width:863px){
+    #mainIndex{
+        height: 330vh;
+    }
+
+    #mainComingEvents,#mainPastEvents{
+        height: 170vh;
+    }
+    
+    #mainContact{
+        height: 100vh;
+    }
+
+    #mainStats{
+        margin-top: 10px;
+        height: 78vh;
+    }
+}
+
+ @media only screen and (min-width:864px) and (max-width:1023px){
+    #mainIndex{
+        height: 245vh;
+    }
+    
+    #mainComingEvents,#mainPastEvents{
+        height: 170vh;
+    } 
+    
+    #mainContact{
+        height: 100vh;
+    }
+    
+    #mainStats{
+        height: 80vh;
+        margin-top: 10px;
+    }
+    
+    
+    #mainDetails{
+        height: 130vh;
+    }
+} 
+
+@media only screen and (min-width:1024px)/*  and (max-width:1440px) */{
+    #mainIndex{
+        height: 185vh;
+    }
+    
+    #mainComingEvents,#mainPastEvents{
+        height: 130vh;
+    } 
+    
+    #mainContact{
+        height: 100vh;
+    }
+    
+    #mainStats{
+        height: 78.5vh;
+        margin-top: 10px;
+    }
+    
+    
+    #mainDetails{
+        height: 130vh;
+    }
+}
+@media only screen and (min-width:1025px){
+    #mainIndex{
+        height: 235vh;
+    }
+    
+    #mainComingEvents,#mainPastEvents{
+        height: 80vh;
+    } 
+    
+    #mainContact{
+        height: 100vh;
+    }
+    
+    #mainStats{
+        height: 78.5vh;
+        margin-top: 10px;
+    }
+    
+    
+    #mainDetails{
+        height: 130vh;
+    }
+} 
