@@ -6,61 +6,106 @@
                                                     /* HEADER */
 header{
     height: 10vh;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
+    z-index: 1;
+}
+
+body{
+    background-color: beige;
 }
 
 header, 
 footer, 
 .navbar{
-    background-color: rgb(129, 2, 129) !important; 
+    background-color: rgb(167, 16, 167) !important; 
 }
 
 #navbarSupportedContent{
     z-index: 1;
-    background-color: rgb(129, 2, 129);
+    background-color: rgb(167, 16, 167);
 }
 
 nav img{
     width: 6rem;
 }
+
                                                     /* MAINS */
-#mainIndex{
-    height: 565vh;
+#mainIndex, #mainComingEvents,#mainPastEvents, #mainContact, #mainDetails{
+    min-height: 80vh;
 }
 
-#mainComingEvents,#mainPastEvents{
-    height: 330vh;
-} 
-
-#mainContact{
-    height: 110vh;
+.categoryControlComing, .categoryControlPast{
+    height: 49vh;
 }
 
 #mainStats{
-    height: 77vh;
-}
-
-
-#mainDetails{
-    height: 130vh;
+    height: 110vh;
 }
 
 h1{
     text-align: center;
 }
-
-                                                    /* CARTAS */
-
-.sectionCard{
+                                                    /* Checkboxs */
+.categoryControl{
+    height: 69vh;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+                                                    
+.past, .coming{
+    height: 70vh;
+}
+                                                                                                       
+.categoryControl .d-flex{
+    margin: .4rem;
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+}
+                                                    
+.categoryControl .d-flex input{
+    width: 8rem;
+    height: 1rem;
+}
+.categoryControl .d-flex button{
+    height: 2rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
+                                                    /* CARTAS */
+
+#mainIndex #sectionCard{
+    height: 987vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#mainComingEvents #sectionCard, #mainPastEvents #sectionCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.containerTxt h1{
+    text-align: center;
+}
+
+.card{
+    margin-top: 1rem;
+    height: 22rem;
+}
+
 .card-img-top{
-    height: 13rem;
+    height: 10rem;
 }
 
 .buttonCard{
@@ -71,7 +116,7 @@ h1{
                                                               /* FORMULARIO */
                                                     
 .containerForm{
-    height: 100vh;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +147,7 @@ label,input,textarea{
 }
                                                                 /* STATS */
 .containerTable{
+    margin-top: 10px;
     height: 70vh;
     display: flex;
     justify-content: center;
@@ -124,7 +170,7 @@ th{
                                                                 /* DETAILS */
 
 .detailsSection{
-    height: 130vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -132,11 +178,12 @@ th{
 }
 
 .containerImg{
-    height: 50vh;
-    width: 60vw;
-    border: 1px solid #000;
+    margin-bottom: 3rem;
+    height: 30vh;
+    width: 80vw;
+    border-radius: 35%;   
     background-color: #fff;
-    box-shadow: -20px -10px 15px -3px rgba(0, 0, 0, 0.575);
+    box-shadow: -0px 0px 30px -3px rgba(0, 0, 0, 0.575);
 }
 
 .detailsImg{
@@ -144,24 +191,13 @@ th{
 }
 
 .containerTxt{
-    height: 70vh;
-    width: 60vw;
-    border: 1px solid #000;
-    background-color: #fff;
-}
-
-.containerTxt h1{
+    margin-bottom: 3rem;
+    height: 45vh;
+    width: 80vw;
     text-align: center;
-}
-
-.card{
-    margin-top: 1rem;
-}
-
-.sectionCard{
-    height: 70vh;
-    display: flex;
-    align-items: center;
+    border-radius: 15%;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px 3px rgba(0, 0, 0, 0.575);
 }
                                                                 /* FOOTER */
 footer{
@@ -171,90 +207,54 @@ footer{
     align-items: center;
 }
 
+footer a img{
+    height: 1.5rem;
+}
+
 footer p{
     color: #fff;
 }
 
-.categoryControl{
-    height: 3rem;
-    display: flex;
-    align-items: center;
-}
-
-.categoryControl input{
-    height: 1rem;
-}
-
-.categoryControl .d-flex{
-    height: 1rem;
-    background-color: transparent;
-    border: none;
-    align-items: center;
-}
-
-.categoryControl .d-flex input{
-    width: 8rem;
-    height: 2rem;
-}
-.categoryControl .d-flex button{
-    height: 2rem;
-    width: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media only screen and (min-width:325px) and (max-width:574px){
-                                                        /* MAINS */
-#mainIndex{
-    height: 565vh;
-}
-
-#mainComingEvents,#mainPastEvents{
-    height: 330vh;
-} 
-
-#mainContact{
-    height: 110vh;
-}
-
-#mainStats{
-    height: 77vh;
-}
-
-
-#mainDetails{
-    height: 130vh;
-}
-
-}
-
-@media only screen and (min-width:576px) and (max-width:863px){
-    #mainIndex{
-        height: 330vh;
+@media only screen and (min-width:576px){
+    #mainIndex #sectionCard{
+        height: 495vh;
     }
-
+    
     #mainComingEvents,#mainPastEvents{
-        height: 170vh;
+        height: 285vh;
+    } 
+
+    #mainComingEvents #sectionCard, #mainPastEvents #sectionCard{
+        height: 285vh;
+        flex-direction: row;
     }
     
     #mainContact{
         height: 100vh;
     }
-
+    
     #mainStats{
-        margin-top: 10px;
-        height: 78vh;
+        height: 90vh;
+        
+    }
+    
+    #mainDetails{
+        height: 100vh;
+    }
+
+    .categoryControl{
+        height: 70vh; 
     }
 }
+ @media only screen and (min-width:864px) {
 
- @media only screen and (min-width:864px) and (max-width:1023px){
-    #mainIndex{
-        height: 245vh;
+    #mainIndex #sectionCard{
+        height: 353vh;
+        align-content: center;
     }
     
     #mainComingEvents,#mainPastEvents{
-        height: 170vh;
+        height: 275vh;
     } 
     
     #mainContact{
@@ -266,21 +266,27 @@ footer p{
         margin-top: 10px;
     }
     
-    
     #mainDetails{
         height: 130vh;
     }
 } 
+ @media only screen and (min-width:1024px){
+    #mainIndex {
+        height: 278;
+    }
+    
+    #mainIndex #sectionCard{
+        height: 288vh;
+    }
 
-@media only screen and (min-width:1024px)/*  and (max-width:1440px) */{
-    #mainIndex{
-        height: 185vh;
-    }
-    
     #mainComingEvents,#mainPastEvents{
-        height: 130vh;
+        height: 160vh;
     } 
     
+    #mainComingEvents #sectionCard, #mainPastEvents #sectionCard{
+        height: 160vh;
+    }
+
     #mainContact{
         height: 100vh;
     }
@@ -290,31 +296,10 @@ footer p{
         margin-top: 10px;
     }
     
-    
     #mainDetails{
         height: 130vh;
     }
-}
-@media only screen and (min-width:1025px){
-    #mainIndex{
-        height: 235vh;
+    .categoryControl{
+        height: 50vh;
     }
-    
-    #mainComingEvents,#mainPastEvents{
-        height: 80vh;
-    } 
-    
-    #mainContact{
-        height: 100vh;
-    }
-    
-    #mainStats{
-        height: 78.5vh;
-        margin-top: 10px;
-    }
-    
-    
-    #mainDetails{
-        height: 130vh;
-    }
-} 
+}  
