@@ -1,22 +1,26 @@
 // Obtener el elemento HTML donde se mostrarán las tarjetas de evento
-let cards = document.getElementById("sectionCard");
+let cards = document.getElementById("sectionCard")
 
-// Obtener la fecha actual y los eventos
-let currentDate = data.currentDate;
-let events = data.events;
+//Usamos la API fetch para agarrar los datos de la url
+let url = "https://mindhub-xj03.onrender.com/api/amazing"
+fetch(url)
+.then(res => {
+  return res.json()
+})
+.then(data =>{
+  let currentDate = data.currentDate
+  let events = data.events
 
-// Filtrar los eventos por fecha
-let filteredEvents = [];
+  let filteredEvents = []
 for (let i = 0; i < events.length; i++) {
-  let event = events[i];
-  let eventDate = event.date;
+  let event = events[i]
+  let eventDate = event.date
 
   if (eventDate > currentDate) {
-    filteredEvents.push(event);
+    filteredEvents.push(event)
   }
 }
-
-// Por otro lado, creamos una función para generar la estructura HTML de una tarjeta de evento
+  
 function eventCard(card) {
   return `<div class="card" style="width: 18rem;">
             <img src="${card.image}" class="card-img-top img" alt="img ${card.name}">
@@ -30,8 +34,6 @@ function eventCard(card) {
             </div>
           </div>`;
 }
-
-// Función para mostrar las tarjetas de evento en el elemento HTML
 function showEvent(array, element) {
   element.innerHTML = '';
   let template = '';
@@ -43,14 +45,10 @@ function showEvent(array, element) {
 
   element.innerHTML = template;
 }
+showEvent(filteredEvents, cards)
 
-// Mostrar las tarjetas de evento filtradas
-showEvent(filteredEvents, cards);
+const checkBoxs = document.getElementById("categoryControl")
 
-// Obtener el elemento HTML donde se mostrarán los checkboxes
-const checkBoxs = document.getElementById("categoryControl");
-
-// Crear y mostrar los checkboxes dinámicamente
 function crearCheckBoxs(category) {
   const div = document.createElement("div");
   div.classList.add("form-check");
@@ -73,7 +71,6 @@ function crearCheckBoxs(category) {
 
   return div;
 }
-
 function showCheckbox(modulos, element) {
   const fragment = document.createDocumentFragment();
 
@@ -85,16 +82,13 @@ function showCheckbox(modulos, element) {
   element.appendChild(fragment);
 }
 
-// Obtener los módulos para hacer dinámicos los checkboxes
-const modulos = data.events.map((category) => category.category);
-const modulosSinRepetidos = new Set(modulos);
-const arrayModulosSinRepetidos = Array.from(modulosSinRepetidos);
-showCheckbox(arrayModulosSinRepetidos, checkBoxs);
+const modulos = data.events.map((category) => category.category)
+const modulosSinRepetidos = new Set(modulos)
+const arrayModulosSinRepetidos = Array.from(modulosSinRepetidos)
+showCheckbox(arrayModulosSinRepetidos, checkBoxs)
 
-// Obtener el elemento HTML del campo de búsqueda
 const search = document.getElementById("searchInput");
 
-// Función para filtrar y mostrar los eventos en función de los checkboxes y la búsqueda
 function filterAndShowEvents() {
   const checkboxChecks = Array.from(document.querySelectorAll("input[type=checkbox]:checked")).map((check) => check.value);
   const searchQuery = search.value.toLowerCase().trim();
@@ -113,8 +107,7 @@ function filterAndShowEvents() {
 }
 }
 
-
-
-// Agregar eventos a los checkboxes y al campo de búsqueda
-checkBoxs.addEventListener("change", filterAndShowEvents);
-search.addEventListener("keyup", filterAndShowEvents);
+checkBoxs.addEventListener("change", filterAndShowEvents)
+search.addEventListener("keyup", filterAndShowEvents)
+})
+.catch(error => {console.log(error)})
