@@ -77,12 +77,12 @@ fetch(url)
     //revenues
         const totalRevenuesCategories = (eventosCategoria.reduce((acumulador, evento)=>{
           return acumulador + ((evento.estimate * evento.price))
-        },0)/ eventosCategoria.length).toLocaleString()
+        },0)).toLocaleString()
       console.log("$",totalRevenuesCategories);
     //  %
       const totalPorcentajeCategories =  (eventosCategoria.reduce((acumulador, evento)=>{
         return acumulador + ((evento.estimate * 100) / evento.capacity)
-      },0)/ eventosCategoria.length).toFixed(2)
+      },0) / eventosCategoria.length).toFixed(2)
     console.log("%",totalPorcentajeCategories);
 
     //Mostramos la Tabla dos
@@ -118,7 +118,7 @@ fetch(url)
   //revenues
       const totalRevenuesCategories = (eventosCategoria.reduce((acumulador, evento)=>{
         return acumulador + ((evento.assistance * evento.price))
-      },0)/ eventosCategoria.length).toLocaleString()
+      },0)).toLocaleString()
     console.log("$",totalRevenuesCategories);
   //  %
     const totalPorcentajeCategories =  (eventosCategoria.reduce((acumulador, evento)=>{
