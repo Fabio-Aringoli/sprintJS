@@ -6,61 +6,76 @@
                                                     /* HEADER */
 header{
     height: 10vh;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
+    z-index: 1;
+}
+
+body{
+    background-color: beige;
 }
 
 header, 
 footer, 
 .navbar{
-    background-color: rgb(129, 2, 129) !important; 
+    background-color: rgb(167, 16, 167) !important; 
 }
 
 #navbarSupportedContent{
     z-index: 1;
-    background-color: rgb(129, 2, 129);
+    background-color: rgb(167, 16, 167);
+}
+
+.nav-link{
+    color: #fff;
 }
 
 nav img{
     width: 6rem;
 }
+
                                                     /* MAINS */
-#mainIndex{
-    height: 565vh;
+#mainIndex, #mainComingEvents,#mainPastEvents, #mainContact, #mainDetails{
+    min-height: 80vh;
 }
 
-#mainComingEvents,#mainPastEvents{
-    height: 330vh;
-} 
-
-#mainContact{
-    height: 110vh;
-}
-
-#mainStats{
-    height: 77vh;
-}
-
-
-#mainDetails{
-    height: 130vh;
+.categoryControlComing, .categoryControlPast{
+    height: 49vh;
 }
 
 h1{
     text-align: center;
 }
-
-                                                    /* CARTAS */
-
-.sectionCard{
+                                                    /* Checkboxs */
+.categoryControl{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
 }
 
+.past, .coming{
+    height: 62vh;
+}
+                                                                                                       
+#mainComingEvents #sectionCard, #mainPastEvents #sectionCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.containerTxt h1{
+    text-align: center;
+}
+
+.card{
+    margin-top: 1rem;
+    height: 22rem;
+}
+
 .card-img-top{
-    height: 13rem;
+    height: 10rem;
 }
 
 .buttonCard{
@@ -71,7 +86,7 @@ h1{
                                                               /* FORMULARIO */
                                                     
 .containerForm{
-    height: 100vh;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,30 +116,30 @@ label,input,textarea{
     border: none;
 }
                                                                 /* STATS */
-.containerTable{
-    height: 70vh;
+#containerTable{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
-table{
-    padding: .4rem;
-    border: none;
+ table{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 tr,th,td{
-    padding: 1rem;
+    padding: .4rem;
     border: 1px solid #000;
 }
 th{
     color: #fff;
     text-shadow: 1px 1px 1px  #000;
     background-color: rgb(125, 125, 125);
-}
+} 
 
                                                                 /* DETAILS */
 
 .detailsSection{
-    height: 130vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -132,37 +147,31 @@ th{
 }
 
 .containerImg{
-    height: 50vh;
-    width: 60vw;
-    border: 1px solid #000;
-    background-color: #fff;
-    box-shadow: -20px -10px 15px -3px rgba(0, 0, 0, 0.575);
+    margin-bottom: 2rem;
+    box-shadow: -0px 0px 30px -3px rgba(0, 0, 0, 0.575);
 }
 
 .detailsImg{
-    object-fit: cover;
+    width: 100%;
+    height: 10rem;
+    object-fit: contain;
 }
 
 .containerTxt{
-    height: 70vh;
-    width: 60vw;
-    border: 1px solid #000;
-    background-color: #fff;
-}
-
-.containerTxt h1{
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+    height: 45vh;
+    width: 80vw;
     text-align: center;
+    border-radius: 15%;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px 3px rgba(0, 0, 0, 0.575);
 }
 
-.card{
-    margin-top: 1rem;
+.containerTxt p{
+    margin-bottom: 0;
 }
 
-.sectionCard{
-    height: 70vh;
-    display: flex;
-    align-items: center;
-}
                                                                 /* FOOTER */
 footer{
     height: 10vh;
@@ -171,150 +180,96 @@ footer{
     align-items: center;
 }
 
+footer a img{
+    height: 1.5rem;
+}
+
 footer p{
     color: #fff;
 }
 
-.categoryControl{
-    height: 3rem;
-    display: flex;
-    align-items: center;
-}
-
-.categoryControl input{
-    height: 1rem;
-}
-
-.categoryControl .d-flex{
-    height: 1rem;
-    background-color: transparent;
-    border: none;
-    align-items: center;
-}
-
-.categoryControl .d-flex input{
-    width: 8rem;
-    height: 2rem;
-}
-.categoryControl .d-flex button{
-    height: 2rem;
-    width: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media only screen and (min-width:325px) and (max-width:574px){
-                                                        /* MAINS */
-#mainIndex{
-    height: 565vh;
-}
-
-#mainComingEvents,#mainPastEvents{
-    height: 330vh;
-} 
-
-#mainContact{
-    height: 110vh;
-}
-
-#mainStats{
-    height: 77vh;
-}
-
-
-#mainDetails{
-    height: 130vh;
-}
-
-}
-
-@media only screen and (min-width:576px) and (max-width:863px){
-    #mainIndex{
-        height: 330vh;
-    }
-
-    #mainComingEvents,#mainPastEvents{
-        height: 170vh;
+@media only screen and (min-width:576px){
+    #mainComingEvents #sectionCard, #mainPastEvents #sectionCard{
+        flex-direction: row;
     }
     
     #mainContact{
         height: 100vh;
     }
 
-    #mainStats{
-        margin-top: 10px;
-        height: 78vh;
+    #mainDetails{
+        height: 100vh;
+    }
+
+    .categoryControl{
+        height: 91vh; 
+    }
+    .coming,
+    .past{
+        height: 62vh;
+    }
+
+    .detailsSection{
+        height: 100vh;
+    }
+
+    .detailsImg{
+        height: 11rem;
+    }
+
+    .containerTxt{
+        margin-top: 2rem;
     }
 }
+ @media only screen and (min-width:864px) {
 
- @media only screen and (min-width:864px) and (max-width:1023px){
-    #mainIndex{
-        height: 245vh;
+    #mainIndex #sectionCard{
+        align-content: center;
     }
-    
-    #mainComingEvents,#mainPastEvents{
-        height: 170vh;
-    } 
-    
+
     #mainContact{
         height: 100vh;
     }
     
     #mainStats{
-        height: 80vh;
         margin-top: 10px;
     }
-    
     
     #mainDetails{
         height: 130vh;
     }
-} 
 
-@media only screen and (min-width:1024px)/*  and (max-width:1440px) */{
-    #mainIndex{
-        height: 185vh;
+    .detailsImg{
+        height: 14rem;
     }
-    
-    #mainComingEvents,#mainPastEvents{
-        height: 130vh;
-    } 
-    
-    #mainContact{
-        height: 100vh;
-    }
-    
-    #mainStats{
-        height: 78.5vh;
-        margin-top: 10px;
-    }
-    
-    
-    #mainDetails{
-        height: 130vh;
-    }
-}
-@media only screen and (min-width:1025px){
-    #mainIndex{
-        height: 235vh;
-    }
-    
-    #mainComingEvents,#mainPastEvents{
-        height: 80vh;
-    } 
-    
-    #mainContact{
-        height: 100vh;
-    }
-    
-    #mainStats{
-        height: 78.5vh;
-        margin-top: 10px;
-    }
-    
-    
-    #mainDetails{
-        height: 130vh;
+
+    .containerTxt{
+        margin-top: 2rem;
     }
 } 
+ @media only screen and (min-width:1024px){
+    #mainContact{
+        height: 100vh;
+    }
+    
+    #mainStats{
+        margin-top: 10px;
+    }
+    
+    #mainDetails{
+        height: 130vh;
+    }
+    .categoryControl{
+        height: 11vh;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .containerImg{
+        height: 11rem;
+    }
+
+    .containerTxt{
+        margin-top: 2rem;
+    }
+}  
